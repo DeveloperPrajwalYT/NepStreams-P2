@@ -1,17 +1,14 @@
 [build]
   publish = "."
-  command = "echo 'No build needed'"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
 
 [[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "SAMEORIGIN"
     X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "no-referrer-when-downgrade"
-    Permissions-Policy = "autoplay=(*)"
-    Content-Security-Policy = "default-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.anilist.co https://fonts.googleapis.com https://fonts.gstatic.com https://via.placeholder.com; frame-src *; img-src * data: blob:"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+    Access-Control-Allow-Origin = "*"
